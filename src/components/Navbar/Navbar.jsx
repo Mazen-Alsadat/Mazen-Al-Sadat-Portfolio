@@ -17,10 +17,21 @@ export default function Navbar() {
     };
   }, []);
 
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    setOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="container nav">
-        <a href="/" className="logo" aria-label="Mazen Logo"></a>
+        <a
+          href={`${import.meta.env.BASE_URL}#top`}
+          onClick={handleLogoClick}
+          className="logo"
+          aria-label="Mazen Logo"
+        ></a>
 
         <nav className={open ? "active" : ""}>
           <a href="#work" onClick={() => setOpen(false)}>
