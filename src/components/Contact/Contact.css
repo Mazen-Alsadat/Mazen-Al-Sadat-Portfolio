@@ -1,0 +1,206 @@
+.contact {
+  padding: 140px 0;
+}
+
+.contact-box {
+  background: rgba(14, 14, 18, 0.88);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6),
+              0 0 40px color-mix(in srgb, var(--accent, #e7b44a) 8%, transparent);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-box:hover {
+  border-color: color-mix(in srgb, var(--accent, #e7b44a) 35%, rgba(255, 255, 255, 0.15));
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.8), 
+              0 0 35px color-mix(in srgb, var(--accent, #e7b44a) 15%, transparent);
+}
+
+/* شريط المونتاج العلوي داخل الكارد (فريم بريمير/دافنشي) */
+.contact-monitor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.025);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  font-family: monospace;
+  font-size: 11.5px;
+  letter-spacing: 2px;
+  color: #888;
+}
+
+.monitor-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.record-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ff3b30;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff3b30;
+  animation: pulseRecord 1.5s infinite alternate;
+}
+
+@keyframes pulseRecord {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.monitor-center {
+  color: #aaa;
+  font-weight: 600;
+}
+
+.monitor-right {
+  color: var(--accent, #e7b44a);
+  font-weight: 700;
+}
+
+/* محتوى الكارد الداخلي */
+.contact-content {
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.small-title {
+  color: var(--accent);
+  letter-spacing: 4px;
+  font-size: 14px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.contact-box h2 {
+  font-size: clamp(40px, 5vw, 75px);
+  line-height: 1.05;
+  letter-spacing: -3px;
+}
+
+.contact-box h2 span {
+  color: var(--accent);
+}
+
+.contact-text {
+  color: #aaa;
+  font-size: 19px;
+  margin: 30px auto;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 45px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  padding: 14px 28px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14.5px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-links a:hover {
+  background: color-mix(in srgb, var(--accent, #e7b44a) 15%, transparent);
+  border-color: color-mix(in srgb, var(--accent, #e7b44a) 50%, transparent);
+  color: var(--accent, #e7b44a);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px color-mix(in srgb, var(--accent, #e7b44a) 25%, transparent);
+}
+
+/* شريط تايملاين سفلي لإعطاء إيحاء إبداعي للمونتاج */
+.timeline-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  position: relative;
+  width: 100%;
+}
+
+.timeline-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent, #e7b44a);
+  box-shadow: 0 0 12px var(--accent, #e7b44a);
+}
+
+/* TABLET */
+@media(max-width: 900px) {
+  .contact {
+    padding: 100px 0;
+  }
+
+  .contact-content {
+    padding: 50px 30px;
+  }
+
+  .contact-text {
+    font-size: 18px;
+  }
+}
+
+/* MOBILE */
+@media(max-width: 600px) {
+  .contact {
+    padding: 80px 0;
+  }
+
+  .contact-monitor-header {
+    padding: 10px 16px;
+    font-size: 10px;
+  }
+
+  .contact-content {
+    padding: 40px 20px;
+  }
+
+  .small-title {
+    font-size: 12px;
+  }
+
+  .contact-box h2 {
+    font-size: 38px;
+    letter-spacing: -2px;
+  }
+
+  .contact-text {
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 20px auto;
+  }
+
+  .contact-links {
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .contact-links a {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 20px;
+    font-size: 14px;
+    justify-content: center;
+  }
+}
