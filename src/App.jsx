@@ -16,55 +16,33 @@ import ScrollTop from "./components/ScrollTop/ScrollTop";
 function Home() {
   return (
     <main className="site">
-
       <Hero />
-
       <Portfolio />
-
       <About />
-
       <Contact />
-
     </main>
   );
 }
 
 function App() {
-
   const location = useLocation();
 
   return (
-
     <div id="top" className="app">
-
       <Background />
-
       <Navbar />
 
       <AnimatePresence mode="wait">
-
-        <Routes
-          location={location}
-          key={location.pathname}
-        >
-
-          <Route
-            path="/"
-            element={<Home />}
-          />
-
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
         </Routes>
-
       </AnimatePresence>
 
       <Footer />
-
       <ScrollTop />
-
     </div>
-
   );
-
 }
 
 export default App;
